@@ -72,7 +72,7 @@ main:
     cmp w19, '-'
     b.eq resta
 
-    cmp w19, '*'
+    cmp w19, 'x'
     b.eq mult
 
     cmp w19, '/'
