@@ -38,7 +38,6 @@ exit:
 
     // restauramos los registros
     mov x1, x30
-    ldr x19, [sp, 0]
-    ldr x30, [SP, 8]
+    ldr x30, [SP]
     add SP, SP, #16 // retornamos el espacio prestado del stack
     ret // retornamos al SO
