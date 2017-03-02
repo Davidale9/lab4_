@@ -78,13 +78,12 @@ main:
     cmp w19, '/'
     b.eq div
 
+exit:
+    // restauramos los registros
     mov x1, x0
     ldr x0, =String
     bl printf
-    b exit
 
-exit:
-    // restauramos los registros
     mov x1	, x30
     ldr x30, [SP]
     add SP, SP, #16 // retornamos el espacio prestado del stack
