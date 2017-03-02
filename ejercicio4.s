@@ -22,7 +22,7 @@ fact:
     b fin_fact
 cambio:
     mov x0, 1
-    b fin_fact
+
 fin_fact:
     mov x1, x0
     ldr x0, =String
