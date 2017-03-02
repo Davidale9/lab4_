@@ -24,8 +24,8 @@ cambio:
     mov x0, 1
 
 fin_fact:
-    ldr x19 [sp, 0]
-    ldr x30 [sp, 8]
+    ldr x19, [sp, 0]
+    ldr x30, [sp, 8]
     add sp, sp, 16
     ret
     b exit
