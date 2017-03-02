@@ -10,6 +10,9 @@ main:
     ldr x21, [x1, 8]
     mov x0, x21
     bl atoi
+	bl fact
+	b exit
+
 fact:
     add SP, SP, #-16
     str x30, [sp, 0]
@@ -30,7 +33,7 @@ fin_fact:
     ldr x19, [sp, 8]
     add sp, sp, 16
     ret
-    b exit
+//    b exit
 exit:
     mov x1, x0
     ldr x0, =String
