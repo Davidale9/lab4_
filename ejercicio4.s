@@ -12,8 +12,8 @@ main:
     bl atoi
 fact:
     add SP, SP, #-16
-    str x19, [sp, 0]
-    str x30, [SP, 8]         // guardamos x30 para poder llamar a funciones
+    str x30, [sp, 0]
+    str x19, [SP, 8]         // guardamos x30 para poder llamar a funciones
 
     mov x19, x0
     cmp x19, 1
@@ -26,8 +26,8 @@ cambio:
     mov x0, 1
 
 fin_fact:
-    ldr x19, [sp, 0]
-    ldr x30, [sp, 8]
+    ldr x30, [sp, 0]
+    ldr x19, [sp, 8]
     add sp, sp, 16
     ret
     b exit
@@ -38,7 +38,7 @@ exit:
 
     // restauramos los registros
     mov x1, x30
-    ldr x19, [sp, 0]
-    ldr x30, [SP, 8]
+    ldr x30, [sp, 0]
+    ldr x19, [SP, 8]
     add SP, SP, #16 // retornamos el espacio prestado del stack
     ret // retornamos al SO
