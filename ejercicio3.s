@@ -51,7 +51,8 @@ main:
     str x30, [SP]         // guardamos x30 para poder llamar a funciones
 
     ldr x21, [x1, 8]
-    ldr x22, [x1, 16]
+    ldr x9, [x1, 16]
+    ldrw w9, [x9, 0]
     ldr x23, [x1, 24]
 
     mov x0, x21
@@ -64,8 +65,10 @@ main:
 
     mov x0, x21
     mov x1, x23
-    cmp x1, 2
-    b.ne sumar	 // mandamos a llamar a add
+
+    cmp w9, '+'
+
+    b.eq sumar	 // mandamos a llamar a add
     mov x1, x0
     ldr x0, =String
     bl printf
