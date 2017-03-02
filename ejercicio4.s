@@ -17,12 +17,12 @@ fact:
     cmp x19, 1
     b.lt cambio
     sub x0, x19, 1
-    bl. fact
+    bl fact
     mul  x0, x19, x0
     b fin-fact
 cambio:
     mov x0, 1
-    b. fin-fact
+    b fin-fact
 fin-fact:
     mov x1, x0
     ldr x0, =String
