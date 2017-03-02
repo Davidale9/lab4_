@@ -13,17 +13,17 @@ fact:
     str x19, [sp, 0]
     str x30, [SP, 8]         // guardamos x30 para poder llamar a funciones
 
-    mov x19 x0
+    mov x19, x0
     cmp x19, 1
     b.lt cambio
     sub x0, x19, 1
     bl fact
     mul  x0, x19, x0
-    b fin-fact
+    b fin_fact
 cambio:
     mov x0, 1
-    b fin-fact
-fin-fact:
+    b fin_fact
+fin_fact:
     mov x1, x0
     ldr x0, =String
     bl printf
