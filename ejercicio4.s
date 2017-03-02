@@ -5,6 +5,8 @@
 
 
 main:
+    sub sp, sp, 16
+    str x30, [sp]
     ldr x21, [x1, 8]
     mov x0, x21
     bl atoi
