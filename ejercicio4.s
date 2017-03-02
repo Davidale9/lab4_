@@ -24,12 +24,16 @@ cambio:
     mov x0, 1
 
 fin_fact:
+    ldr x19 [sp, 0]
+    ldr x30 [sp, 8]
+    add sp, sp, 16
+    ret
+    b exit
+exit:
     mov x1, x0
     ldr x0, =String
     bl printf
-    b exit
 
-exit:
     // restauramos los registros
     mov x1, x30
     ldr x19, [sp, 0]
